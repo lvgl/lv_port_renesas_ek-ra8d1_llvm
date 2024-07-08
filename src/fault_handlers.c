@@ -16,6 +16,7 @@ void prvGetRegistersFromStack( uint32_t *pulFaultStackAddress );
 
 volatile uint32_t g_ccr = 0;
 
+__attribute__((used))
 void HardFault_Handler(void)
 {
     __asm volatile
@@ -59,6 +60,7 @@ void UsageFault_Handler(void)
 
 }
 
+__attribute__((used))
 void prvGetRegistersFromStack( uint32_t *pulFaultStackAddress )
 {
 /* These are volatile to try and prevent the compiler/linker optimising them
