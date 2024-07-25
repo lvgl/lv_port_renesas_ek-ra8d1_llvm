@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is prefofivured to use LLVM 17 for Renesas EK-RA8D1 in e2 Studio.
+This project is pre-configured to use LLVM 17 for Renesas EK-RA8D1 in e2 Studio.
 
 The EK-RA8D1 evaluation kit enables users to effortlessly evaluate the features of the RA8D1 MCU Group and develop embedded systems applications using Renesas’ Flexible Software Package (FSP) and e2 studio IDE. Utilize rich on-board features along with your choice of popular ecosystem add-ons to bring your big ideas to life.
 
