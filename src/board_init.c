@@ -46,7 +46,6 @@ void board_init(void)
 #if 0
     lv_display_t * disp = lv_renesas_glcdc_direct_create();
 #else
-    asd
     static lv_color_t partial_draw_buf[DISPLAY_HSIZE_INPUT0 * DISPLAY_VSIZE_INPUT0 / 10] BSP_ALIGN_VARIABLE(1024);
 
     lv_display_t * disp = lv_renesas_glcdc_partial_create(partial_draw_buf, NULL, sizeof(partial_draw_buf));
