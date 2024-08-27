@@ -2,15 +2,27 @@
 #include "board_init.h"
 #include "lvgl/demos/lv_demos.h"
 
+static uint32_t tick_us100;
+
 void timer_tick_callback(timer_callback_args_t *p_args)
 {
     FSP_PARAMETER_NOT_USED(p_args);
     lv_tick_inc(1);
 }
 
+
 void vApplicationMallocFailedHook( void )
 {
     __BKPT(0);
+}
+
+uint32_t get_idle_percent(void)
+{
+#if LV_USE_OS == LV_OS_FREERTOS
+    return lv_os_get_idle_percent();
+#else
+    return lv_timer_get_idle();
+#endif
 }
 
 /* New Thread entry function */

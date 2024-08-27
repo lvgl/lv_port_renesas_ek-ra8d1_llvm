@@ -48,8 +48,7 @@ void board_init(void)
 #if DIRECT_MODE
     lv_display_t * disp = lv_renesas_glcdc_direct_create();
 #else
-    static lv_color_t partial_draw_buf[DISPLAY_HSIZE_INPUT0 * DISPLAY_VSIZE_INPUT0 / 10] BSP_ALIGN_VARIABLE(1024);
-
+    static uint8_t partial_draw_buf[64 * 1024] BSP_PLACE_IN_SECTION(".dtcm_data");
     lv_display_t * disp = lv_renesas_glcdc_partial_create(partial_draw_buf, NULL, sizeof(partial_draw_buf));
 #endif
 
@@ -58,5 +57,5 @@ void board_init(void)
     /* Enable the backlight */
     R_IOPORT_PinWrite(&g_ioport_ctrl, DISP_BLEN, BSP_IO_LEVEL_HIGH);
 
-//    lv_port_indev_init();
+    lv_port_indev_init();
 }
