@@ -55,6 +55,8 @@ You can purchase the Renesas EK-RA8D1 board from many distributors. See the sour
         ```
         Downloading the `.zip` from GitHub doesn't work as it doesn't download the submodules.
     - Follow the *RA family* section of the [*documentation*](https://docs.lvgl.io/master/integration/chip/renesas.html#get-started-with-the-renesas-ecosystem) to prepare your environment and import the project
+- Link Time Optimization (LTO) is enabled by default and erronosly might eliminatedsome function during Linking. 
+See the compiler to log find those functions and add `__attribute__((used))` before the functions in the C files. For example `__attribute__((used)) void some_func(int x) { ... }`
 
 
 ## Setting up LLVM manually
