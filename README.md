@@ -44,7 +44,7 @@ You can purchase the Renesas EK-RA8D1 board from many distributors. See the sour
 
 ### Software setup
 - Add LLVM
-    - Download **LLVM 17** from `here <https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-17.0.1>`__ . Other versions might work as well, but they are not tested
+    - Download **LLVM 17** from [here])https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-17.0.1) . Other versions might work as well, but they are not tested
     - Extract the downloaded file. The target path can be selected freely.
     - In e² studio click `Help` -> `Add Renesas Toolchain`. From the list select `LLVM Embedded Toolchain for Arm` and click the `Add...` button at the bottom.
     - Browse the extracted LLVM folder then click Ok.
