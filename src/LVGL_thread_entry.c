@@ -2,12 +2,20 @@
 #include "board_init.h"
 #include "lvgl/demos/lv_demos.h"
 
-static uint32_t tick_us100;
+int us100;
 
 void timer_tick_callback(timer_callback_args_t *p_args)
 {
     FSP_PARAMETER_NOT_USED(p_args);
-    lv_tick_inc(1);
+
+    us100++;
+
+    static int x = 0;
+    x++;
+    if(x == 10) {
+        x = 0;
+        lv_tick_inc(1);
+    }
 }
 
 

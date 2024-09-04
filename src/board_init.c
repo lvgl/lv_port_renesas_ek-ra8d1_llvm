@@ -57,5 +57,5 @@ void board_init(void)
     /* Enable the backlight */
     R_IOPORT_PinWrite(&g_ioport_ctrl, DISP_BLEN, BSP_IO_LEVEL_HIGH);
 
-    lv_port_indev_init();
+//    lv_port_indev_init();
 }

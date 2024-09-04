@@ -1047,12 +1047,12 @@ FSP Configuration
       General: Name: g_timer0
       General: Channel: 0
       General: Mode: Periodic
-      General: Period: 1
+      General: Period: 100
       General: Compare Match: Compare Match A: Status: Disabled
       General: Compare Match: Compare Match A: Compare match value: 0
       General: Compare Match: Compare Match B: Status: Disabled
       General: Compare Match: Compare Match B: Compare match value: 0
-      General: Period Unit: Milliseconds
+      General: Period Unit: Microseconds
       Output: Custom Waveform: GTIOA: Initial Output Level: Pin Level Low
       Output: Custom Waveform: GTIOA: Cycle End Output Level: Pin Level Retain
       Output: Custom Waveform: GTIOA: Compare Match Output Level: Pin Level Retain

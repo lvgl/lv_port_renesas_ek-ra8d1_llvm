@@ -1109,7 +1109,7 @@
 #define LV_USE_DEMO_KEYPAD_AND_ENCODER 0
 
 /** Benchmark your system */
-#define LV_USE_DEMO_BENCHMARK 0
+#define LV_USE_DEMO_BENCHMARK 1
 
 /** Render test for each primitive.
  *  - Requires at least 480x272 display. */
