@@ -31,7 +31,7 @@
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.cpu.printsize.1650060861" name="Print Size" superClass="com.renesas.cdt.managedbuild.llvm.core.option.cpu.printsize" value="true" valueType="boolean"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.optimization.optimizationLevel.1760926358" name="Optimization Level" superClass="com.renesas.cdt.managedbuild.llvm.core.option.optimization.optimizationLevel" value="com.renesas.cdt.managedbuild.llvm.core.option.optimization.optimizationLevel.speed" valueType="enumerated"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.optimization.fdatasections.2080414956" name="Data sections (-fdata-sections)" superClass="com.renesas.cdt.managedbuild.llvm.core.option.optimization.fdatasections" value="true" valueType="boolean"/>
-							<option id="com.renesas.cdt.managedbuild.llvm.core.option.debug.debugFormat.157850446" name="Debug format" superClass="com.renesas.cdt.managedbuild.llvm.core.option.debug.debugFormat" value="com.renesas.cdt.managedbuild.llvm.core.option.debug.debugFormat.Default" valueType="enumerated"/>
+							<option id="com.renesas.cdt.managedbuild.llvm.core.option.debug.debugFormat.157850446" name="Debug format" superClass="com.renesas.cdt.managedbuild.llvm.core.option.debug.debugFormat" value="com.renesas.cdt.managedbuild.llvm.core.option.debug.debugFormat.debugwithdwarf" valueType="enumerated"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.cpu.createObjdump.1425924737" name="Enable Objdump tool" superClass="com.renesas.cdt.managedbuild.llvm.core.option.cpu.createObjdump" value="true" valueType="boolean"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.settings.showcommand.563186040" name="Print full command" superClass="com.renesas.cdt.managedbuild.llvm.core.option.settings.showcommand" value="true" valueType="boolean"/>
 							<option id="com.renesas.cdt.managedbuild.llvm.core.option.optimization.flto.1007425557" name="Link-time optimizer (-flto)" superClass="com.renesas.cdt.managedbuild.llvm.core.option.optimization.flto" value="true" valueType="boolean"/>
@@ -70,7 +70,7 @@
 									<listOptionValue builtIn="false" value="_RA_CORE=CM85"/>
 									<listOptionValue builtIn="false" value="_RA_ORDINAL=1"/>
 								</option>
-								<option id="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.debugFormat.2024839051" name="Debug format" superClass="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.debugFormat" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.llvm.core.option.debug.debugFormat.Default" valueType="enumerated"/>
+								<option id="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.debugFormat.2024839051" name="Debug format" superClass="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.debugFormat" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.llvm.core.option.debug.debugFormat.debugwithdwarf" valueType="enumerated"/>
 								<option id="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.optimizationLevel.1291583071" name="Optimization Level" superClass="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.optimizationLevel" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.llvm.core.option.optimization.optimizationLevel.speed" valueType="enumerated"/>
 								<inputType id="com.renesas.cdt.managedbuild.llvm.core.inputType.compiler.c.861776800" superClass="com.renesas.cdt.managedbuild.llvm.core.inputType.compiler.c"/>
 							</tool>
@@ -97,7 +97,7 @@
 									<listOptionValue builtIn="false" value="_RA_CORE=CM85"/>
 									<listOptionValue builtIn="false" value="_RA_ORDINAL=1"/>
 								</option>
-								<option id="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.debugFormat.141584541" name="Debug format" superClass="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.debugFormat" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.llvm.core.option.debug.debugFormat.Default" valueType="enumerated"/>
+								<option id="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.debugFormat.141584541" name="Debug format" superClass="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.debugFormat" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.llvm.core.option.debug.debugFormat.debugwithdwarf" valueType="enumerated"/>
 								<option id="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.optimizationLevel.860702119" name="Optimization Level" superClass="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.optimizationLevel" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.llvm.core.option.optimization.optimizationLevel.speed" valueType="enumerated"/>
 								<inputType id="com.renesas.cdt.managedbuild.llvm.core.inputType.compiler.c.1271145905" superClass="com.renesas.cdt.managedbuild.llvm.core.inputType.compiler.c"/>
 								<inputType id="com.renesas.cdt.managedbuild.llvm.core.inputType.compiler.cpp.768339791" superClass="com.renesas.cdt.managedbuild.llvm.core.inputType.compiler.cpp"/>
@@ -915,6 +915,7 @@
 									<listOptionValue builtIn="false" value="&quot;.\ra/aws/FreeRTOS/FreeRTOS/Source\timers.o&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\liblv_port_renesas_ek-ra8d1_llvm.a&quot;"/>
 								</option>
+								<option id="com.renesas.cdt.managedbuild.llvm.core.option.linker.misc.inputsections.1393467350" name="Enable garbage collection of unused input sections(-gc-sections)" superClass="com.renesas.cdt.managedbuild.llvm.core.option.linker.misc.inputsections" value="true" valueType="boolean"/>
 								<inputType id="com.renesas.cdt.managedbuild.llvm.core.inputType.linker.c.475074245" superClass="com.renesas.cdt.managedbuild.llvm.core.inputType.linker.c">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -972,7 +973,9 @@
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.assembler.1434095704" name="Assembler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.assembler.207432631">
 								<inputType id="com.renesas.cdt.managedbuild.llvm.core.inputType.assembler.1409947489" superClass="com.renesas.cdt.managedbuild.llvm.core.inputType.assembler"/>
 							</tool>
-							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.linker.1751665873" name="Linker" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.linker.1477077376"/>
+							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.linker.1751665873" name="Linker" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.linker.1477077376">
+								<option id="com.renesas.cdt.managedbuild.llvm.core.option.linker.misc.inputsections.1597661213" name="Enable garbage collection of unused input sections(-gc-sections)" superClass="com.renesas.cdt.managedbuild.llvm.core.option.linker.misc.inputsections" value="true" valueType="boolean"/>
+							</tool>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.cpp.linker.1088872022" name="Linker CPP" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.cpp.linker.1168430409"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.Objcopy.1500958710" name="Objcopy" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.Objcopy.15088508"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.archiver.377735110" name="Archiver" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.archiver.2097132833"/>
@@ -1020,7 +1023,9 @@
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.assembler.1132421492" name="Assembler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.assembler.207432631">
 								<inputType id="com.renesas.cdt.managedbuild.llvm.core.inputType.assembler.331575267" superClass="com.renesas.cdt.managedbuild.llvm.core.inputType.assembler"/>
 							</tool>
-							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.linker.1277692138" name="Linker" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.linker.1477077376"/>
+							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.linker.1277692138" name="Linker" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.linker.1477077376">
+								<option id="com.renesas.cdt.managedbuild.llvm.core.option.linker.misc.inputsections.1596309409" name="Enable garbage collection of unused input sections(-gc-sections)" superClass="com.renesas.cdt.managedbuild.llvm.core.option.linker.misc.inputsections" value="true" valueType="boolean"/>
+							</tool>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.cpp.linker.2105724361" name="Linker CPP" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.cpp.linker.1168430409"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.Objcopy.786278722" name="Objcopy" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.Objcopy.15088508"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.archiver.2041493705" name="Archiver" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.archiver.2097132833"/>
@@ -1068,7 +1073,9 @@
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.assembler.310950176" name="Assembler" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.assembler.207432631">
 								<inputType id="com.renesas.cdt.managedbuild.llvm.core.inputType.assembler.588418573" superClass="com.renesas.cdt.managedbuild.llvm.core.inputType.assembler"/>
 							</tool>
-							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.linker.1254371407" name="Linker" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.linker.1477077376"/>
+							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.linker.1254371407" name="Linker" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.linker.1477077376">
+								<option id="com.renesas.cdt.managedbuild.llvm.core.option.linker.misc.inputsections.1991242301" name="Enable garbage collection of unused input sections(-gc-sections)" superClass="com.renesas.cdt.managedbuild.llvm.core.option.linker.misc.inputsections" value="true" valueType="boolean"/>
+							</tool>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.cpp.linker.1876199280" name="Linker CPP" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.cpp.linker.1168430409"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.Objcopy.858737351" name="Objcopy" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.Objcopy.15088508"/>
 							<tool id="com.renesas.cdt.managedbuild.llvm.arm.tool.archiver.1309610545" name="Archiver" superClass="com.renesas.cdt.managedbuild.llvm.arm.tool.archiver.2097132833"/>
@@ -1088,7 +1095,7 @@
 			<storageModule moduleId="com.renesas.cdt.managedbuild.core.toolchainInfo">
 				<option id="toolchain.enable" value="true"/>
 				<option id="toolchain.id" value="clang_arm"/>
-				<option id="toolchain.version" value="17.0.1"/>
+				<option id="toolchain.version" value="18.1.3"/>
 			</storageModule>
 		</cconfiguration>
 		<cconfiguration id="com.renesas.cdt.managedbuild.gnuarm.config.elf.release.2135090764">
