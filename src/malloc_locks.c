@@ -1,12 +1,18 @@
 #include <LVGL_thread.h>
-void __malloc_lock(struct _reent *r) ;
-void __malloc_unlock(struct _reent *r) ;
 
-void __malloc_lock(struct _reent *r)   {
+/* picolibc's malloc lock hooks take no argument, unlike newlib's. */
+
+void __malloc_lock(void);
+void __malloc_unlock(void);
+
+void __malloc_lock(void)
+{
     bool insideAnISR = xPortIsInsideInterrupt();
     configASSERT( !insideAnISR ); // Make damn sure no more mallocs inside ISRs!!
-  vTaskSuspendAll();
-};
-void __malloc_unlock(struct _reent *r) {
-  (void)xTaskResumeAll();
-};
+    vTaskSuspendAll();
+}
+
+void __malloc_unlock(void)
+{
+    (void)xTaskResumeAll();
+}

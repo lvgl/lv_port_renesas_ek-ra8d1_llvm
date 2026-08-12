@@ -2,13 +2,13 @@
 
 #include "lvgl.h"
 #include "port/lv_port_indev.h"
-#include "lvgl/src/drivers/display/renesas_glcdc/lv_renesas_glcdc.h"
 #include "common_data.h"
 
 #include "LVGL_thread.h"
 #include "touch_GT911.h"
 
-#define DIRECT_MODE 0
+/* The FSP LVGL pack ships lv_renesas_glcdc.h without its implementation, so the
+ * display comes from the rm_lvgl_port middleware instead. */
 
 static void touch_init(void)
 {
@@ -45,14 +45,13 @@ void board_init(void)
     /* Need to initialise the Touch Controller before the LCD, as only a Single Reset line shared between them */
     touch_init();
 
-#if DIRECT_MODE
-    lv_display_t * disp = lv_renesas_glcdc_direct_create();
-#else
-    static uint8_t partial_draw_buf[64 * 1024] BSP_PLACE_IN_SECTION(".dtcm_data");
-    lv_display_t * disp = lv_renesas_glcdc_partial_create(partial_draw_buf, NULL, sizeof(partial_draw_buf));
-#endif
+    fsp_err_t err = RM_LVGL_PORT_Open(&g_lvgl_port_ctrl, &g_lvgl_port_cfg);
+    if(FSP_SUCCESS != err)
+    {
+        __BKPT(0); //TODO: Better error handling
+    }
 
-    lv_display_set_default(disp);
+    lv_display_set_default(g_lvgl_port_ctrl.p_lv_display);
 
     /* Enable the backlight */
     R_IOPORT_PinWrite(&g_ioport_ctrl, DISP_BLEN, BSP_IO_LEVEL_HIGH);

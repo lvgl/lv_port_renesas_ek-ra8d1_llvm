@@ -2,11 +2,14 @@
 
 ## Overview
 
-This project is pre-configured to use LLVM 17 for Renesas EK-RA8D1 in e2 Studio.
+This project is pre-configured to use the LLVM Embedded Toolchain for Arm (ATfE) 21.1.1 with
+FSP 6.5.1 for the Renesas EK-RA8D1 in e2 studio. Link Time Optimization is enabled.
 
 The EK-RA8D1 evaluation kit enables users to effortlessly evaluate the features of the RA8D1 MCU Group and develop embedded systems applications using Renesas’ Flexible Software Package (FSP) and e2 studio IDE. Utilize rich on-board features along with your choice of popular ecosystem add-ons to bring your big ideas to life.
 
-The MCU has a Cortex-M85 core which utilizes the Helium (SIMD) instruction set of Arm. Besides that the chip is equipped with a GPU (called DAVE2D) to off load the MCU. 
+The MCU has a Cortex-M85 core and a GPU (called DAVE2D) to off load the MCU. Rendering is
+accelerated by DAVE2D; LVGL's Helium (SIMD) and Arm-2D software backends are not used, because
+the FSP LVGL pack ships LVGL with those blend backends removed.
 
 ## Buy
 
@@ -43,18 +46,40 @@ You can purchase the Renesas EK-RA8D1 board from many distributors. See the sour
 - Connect the USB cable to the `Debug1` (J10) connector
 
 ### Software setup
-- Add LLVM
-    - Download **LLVM 17** from [here])https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-17.0.1) . Other versions might work as well, but they are not tested
-    - Extract the downloaded file. The target path can be selected freely.
-    - In e² studio click `Help` -> `Add Renesas Toolchain`. From the list select `LLVM Embedded Toolchain for Arm` and click the `Add...` button at the bottom.
-    - Browse the extracted LLVM folder then click Ok.
-- Get this project
-    - Clone the repository with the following command:
-        ```
-        git clone https://github.com/lvgl/lv_port_renesas_ek-ra8d1_llvm.git --recurse-submodules
-        ```
-        Downloading the `.zip` from GitHub doesn't work as it doesn't download the submodules.
-    - Follow the *RA family* section of the [*documentation*](https://docs.lvgl.io/master/integration/chip/renesas.html#get-started-with-the-renesas-ecosystem) to prepare your environment and import the project
+
+- [Install the FSP v6.5.0 Platform](https://www.renesas.com/en/software-tool/ra-flexible-software-package-fsp#overview).
+  - When prompted, choose "Custom Install".
+  - Ensure "Renesas RA" is included in your selection of "Additional Software" to install.
+  - Ensure "Renesas FSP v6.5.0" and "LLVM Embedded Toolchain for Arm 21.1.1" are selected.
+- [Download the FSP v6.5.1 Pack](https://github.com/renesas/fsp/releases/tag/v6.5.1)
+  - On **Windows**, download the `FSP_Packs_v6.5.1.exe` file and run it.
+  - On **Linux**, download the `FSP_Packs_v6.5.1.zip` file and extract it into your packs folder:
+    - Locate the e2 studio install location. The most reliable way is to go through
+      **Help > CMSIS Pack Management > Renesas RA** — the packs location is shown at the top of the menu.
+    - If the location is something like `~/.eclipse/com.renesas.platform_808163849/internal/projectgen/ra/packs`
+      and the pack was downloaded to `Downloads`, run:
+      ```bash
+      unzip -o ~/Downloads/FSP_Packs_v6.5.1.zip -d ~/.eclipse/com.renesas.platform_808163849
+      ```
+      The directory structure in the ZIP overlaps with the packs install location. This is expected.
+- If the LLVM toolchain is not already registered, click **Help > Add Renesas Toolchain**, select
+  **LLVM Embedded Toolchain for Arm**, click **Add...** and browse to the toolchain folder.
+
+### Run the project
+
+- Clone this repository:
+    ```bash
+    git clone https://github.com/lvgl/lv_port_renesas_ek-ra8d1_llvm.git
+    ```
+    LVGL ships with the FSP LVGL pack, so there are no submodules to check out.
+- Open e2 studio and go to **File > Open Projects from File System...**. Click "Directory",
+  navigate to the cloned project, then click "Finish".
+- Ensure "LLVM Embedded Toolchain for Arm 21.1.1" is selected in
+  **Project > Properties > C/C++ Build > Settings > Toolchain**.
+- Click the hammer to build, then the bug icon to flash and debug.
+- **After changing the FSP version, run Project > Clean before building.** Clicking Debug does not
+  force a full rebuild, and objects left from the previous FSP and its bundled LVGL will link but
+  misbehave at runtime.
 - Link Time Optimization (LTO) is enabled by default and erronosly might eliminatedsome function during Linking. 
 See the compiler to log find those functions and add `__attribute__((used))` before the functions in the C files. For example `__attribute__((used)) void some_func(int x) { ... }`
 
@@ -70,6 +95,12 @@ Although this project is already pre-configured for LLVM 17 you might be interes
 5. In `Linker CPP` -> `Archives` in `Archive search directories` add `script` folder
 6. In `Objcopy` -> `General` set `OutFormat` to `Intel Hex`
 7. On the `Toolchain` tab be sure that `LLVM for Arm` and the correct version is selected, and click `Apply`.
+
+## LVGL Pro
+
+FSP 6.5.1 uses LVGL v9.5.0 which you can build your UI for using [LVGL Pro](https://lvgl.io/pro).
+
+Check out the official [LVGL Pro e2 studio integration documentation](https://lvgl.io/docs/pro/integration/renesas).
 
 ## Contribution and Support
 
