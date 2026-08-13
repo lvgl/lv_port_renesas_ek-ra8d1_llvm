@@ -31,8 +31,9 @@ uint32_t get_idle_percent(void);
 /* Required for LVGL Pro projects */
 #define LV_USE_TRANSLATION 1
 
-/* LVGL_thread_entry.c prefers the benchmark when both are enabled. */
-#define LV_USE_DEMO_WIDGETS 0
+/* lv_demo_benchmark.c requires the widgets demo and calls into it directly, so both
+ * have to be built. LVGL_thread_entry.c prefers the benchmark when both are enabled. */
+#define LV_USE_DEMO_WIDGETS 1
 #define LV_USE_DEMO_BENCHMARK 1
 
 #endif /* LV_CONF_USER_H_ */

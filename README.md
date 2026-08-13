@@ -83,13 +83,14 @@ You can purchase the Renesas EK-RA8D1 board from many distributors. See the sour
 - **After changing the FSP version, run Project > Clean before building.** Clicking Debug does not
   force a full rebuild, and objects left from the previous FSP and its bundled LVGL will link but
   misbehave at runtime.
-- Link Time Optimization (LTO) is enabled by default and erronosly might eliminatedsome function during Linking. 
-See the compiler to log find those functions and add `__attribute__((used))` before the functions in the C files. For example `__attribute__((used)) void some_func(int x) { ... }`
+- Link Time Optimization (LTO) is enabled by default and may erroneously eliminate functions during
+  linking. Check the compiler log to find those functions and mark them with `__attribute__((used))`
+  in the C files, for example `__attribute__((used)) void some_func(int x) { ... }`.
 
 
 ## Setting up LLVM manually
 
-Although this project is already pre-configured for LLVM 17 you might be interested in knowing what are main steps of changing toolchain. First, be sure that LLVM is added to e² Studio as toolchain as described above.
+Although this project is already pre-configured for the LLVM Embedded Toolchain for Arm (ATfE) 21.1.1, you might be interested in knowing what are main steps of changing toolchain. First, be sure that LLVM is added to e² Studio as toolchain as described above.
 
 1. Click `File` -> `Properties` -> `C/C++ Build` -> `Tool Chain Editor`
 2. In `Current Toolachain` select `LLVM for Arm` and confirm the change of the Toolchain

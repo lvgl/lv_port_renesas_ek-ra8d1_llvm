@@ -358,10 +358,6 @@
       <description>FreeRTOS Port</description>
       <originalPack>Renesas.RA.6.5.1.pack</originalPack>
     </component>
-    <component apiversion="" class="CMSIS" condition="" group="Main" subgroup="DSP" variant="" vendor="Arm" version="1.16.2+fsp.6.5.1">
-      <description>Arm DSP Library Source</description>
-      <originalPack>Arm.CMSIS-DSP.1.16.2+fsp.6.5.1.pack</originalPack>
-    </component>
     <component apiversion="" class="TES" condition="" group="all" subgroup="dave2d" variant="" vendor="Renesas" version="3.8.0+fsp.6.5.1">
       <description>TES DAVE 2D Drawing Engine</description>
       <originalPack>TES.Dave2D.3.8.0+fsp.6.5.1.pack</originalPack>
