@@ -32,7 +32,7 @@ uint32_t get_idle_percent(void);
 #define LV_USE_TRANSLATION 1
 
 /* LVGL_thread_entry.c prefers the benchmark when both are enabled. */
-#define LV_USE_DEMO_WIDGETS 1
+#define LV_USE_DEMO_WIDGETS 0
 #define LV_USE_DEMO_BENCHMARK 1
 
 #endif /* LV_CONF_USER_H_ */
