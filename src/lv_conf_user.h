@@ -29,7 +29,6 @@ uint32_t get_idle_percent(void);
 #define LV_SYSMON_GET_IDLE get_idle_percent
 
 /* Required for LVGL Pro projects */
-#define LV_USE_OBJ_NAME 1
 #define LV_USE_TRANSLATION 1
 
 /* LVGL_thread_entry.c prefers the benchmark when both are enabled. */

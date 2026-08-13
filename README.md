@@ -47,11 +47,14 @@ You can purchase the Renesas EK-RA8D1 board from many distributors. See the sour
 
 ### Software setup
 
-- [Install the FSP v6.5.0 Platform](https://www.renesas.com/en/software-tool/ra-flexible-software-package-fsp#overview).
+- [Install e2 studio](https://www.renesas.com/en/software-tool/e2studio-information-rz-family) for your OS.
   - When prompted, choose "Custom Install".
-  - Ensure "Renesas RA" is included in your selection of "Additional Software" to install.
-  - Ensure "Renesas FSP v6.5.0" and "LLVM Embedded Toolchain for Arm 21.1.1" are selected.
-- [Download the FSP v6.5.1 Pack](https://github.com/renesas/fsp/releases/tag/v6.5.1)
+  - Ensure "RA" is included in your selection of "Device Families" to install.
+  - Ensure "Renesas FSP Smart Configurator Core" and "Renesas FSP Smart Configurator ARM"
+    are included in your selection of "Customize Features".
+  - Ensure "LLVM Embedded Toolchain for Arm 21.1.1" is selected.
+- Install FSP Packs. **v6.5.1 is required.**
+  [Download it here](https://github.com/renesas/fsp/releases/tag/v6.5.1) under "Assets".
   - On **Windows**, download the `FSP_Packs_v6.5.1.exe` file and run it.
   - On **Linux**, download the `FSP_Packs_v6.5.1.zip` file and extract it into your packs folder:
     - Locate the e2 studio install location. The most reliable way is to go through
