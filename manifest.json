@@ -1,0 +1,90 @@
+{
+    "name": "Renesas RA8D1-EK (LLVM)",
+    "maintainer": "LVGL",
+    "hostOperatingsystem": [
+        "Linux",
+        "Windows",
+        "MacOS"
+    ],
+    "environment": [
+        "e2 studio",
+        "LLVM"
+    ],
+    "hardware": {
+        "chipVendor": "Renesas",
+        "manufacturer": "Renesas",
+        "specs": {
+            "MCU": "R7FA8D1BHECBD (Cortex-M85, 480MHz)",
+            "RAM": "1MB internal, 64MB external SDRAM",
+            "Flash": "2MB internal, 64MB External Octo-SPI Flash",
+            "GPU": "Dave2D",
+            "Resolution": "480x854",
+            "Display Size": "4.5”",
+            "Interface": "2-lane MIPI",
+            "Color Depth": "24-bit",
+            "Technology": "IPS",
+            "DPI": "217 px/inch",
+            "Touch Pad": "Capacitive"
+        }
+    },
+    "description": "The EK-RA8D1 evaluation kit enables users to effortlessly evaluate the features of the RA8D1 MCU Group and develop embedded systems applications using Renesas’ Flexible Software Package (FSP) and e2 studio IDE. The MCU has a Cortex-M85 core and is equipped with a GPU (called DAVE2D) to off load the MCU. This variant of the port is built with the LLVM Embedded Toolchain for Arm (ATfE) instead of GCC, with Link Time Optimization enabled. LVGL comes from the FSP LVGL pack and rendering is accelerated by DAVE2D.",
+    "shortDescription": "Cortex-M85 based 480 MHz MCU driving a 480x854 display, built with LLVM.",
+    "urlToClone": "https://github.com/lvgl/lv_port_renesas_ek-ra8d1_llvm",
+    "logos": [
+        "https://raw.githubusercontent.com/lvgl/project-creator/master/meta/images/renesas/logo.svg"
+    ],
+    "image": "https://raw.githubusercontent.com/lvgl/lv_port_renesas_ek-ra8d1_llvm/master/board_images/renesas-EK-RA8D1.webp",
+    "buy_now_links": [
+        "https://renesas.com/ek-ra8d1"
+    ],
+    "branches": [
+        "master"
+    ],
+    "getStartedInstructions": "Follow the instructions in README.md to install e2 studio and the LLVM Embedded Toolchain for Arm, get the FSP Packs, and build and debug the project.",
+    "settings": [
+        {
+            "type": "dropdown",
+            "label": "Use Dave2D GPU",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "1",
+                    "default": "true"
+                },
+                {
+                    "name": "No",
+                    "value": "0"
+                }
+            ],
+            "actions": [
+                {
+                    "toReplace": "#define LV_USE_DRAW_DAVE2D .*",
+                    "newContent": "#define LV_USE_DRAW_DAVE2D {value}",
+                    "filePath": "src/lv_conf_user.h"
+                }
+            ]
+        },
+        {
+            "type": "dropdown",
+            "label": "Show performance monitor",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "1",
+                    "default": "true"
+                },
+                {
+                    "name": "No",
+                    "value": "0"
+                }
+            ],
+            "actions": [
+                {
+                    "toReplace": "#define LV_USE_PERF_MONITOR .*",
+                    "newContent": "#define LV_USE_PERF_MONITOR {value}",
+                    "filePath": "src/lv_conf_user.h"
+                }
+            ]
+        }
+    ]
+}

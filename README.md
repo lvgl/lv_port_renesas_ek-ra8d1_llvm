@@ -15,6 +15,21 @@ the FSP LVGL pack ships LVGL with those blend backends removed.
 
 You can purchase the Renesas EK-RA8D1 board from many distributors. See the sources at https://renesas.com/ek-ra8d1
 
+## Benchmark
+
+During the benchmark 2 frame buffers were used in the external SDRAM. LVGL was configured to
+`LV_DISPLAY_RENDER_MODE_DIRECT` and the buffers were swapped on VSYNC to avoid tearing. Running
+LVGL's benchmark demo, this project reaches about 26 FPS at 22% CPU load.
+
+As observed in the video, the FPS only drops in highly complex scenarios, while CPU usage remains
+low. For instance, when multiple ARGB images were rotated, the FPS dropped to 12 and the rendering
+time increased to 66 ms, but the CPU usage stayed at 10%. Using software rendering only the FPS
+would be significantly lower, and the CPU usage would peak at 100%.
+
+Check out EK-RA8D1 in action, running LVGL's benchmark demo:
+[![image](https://github.com/lvgl/lv_port_renesas_ek-ra8d1/assets/7599318/7dab86d6-b092-495b-a989-2555118d7570)
+](https://www.youtube.com/watch?v=WkJPB8wto_U)
+
 ## Specification
 
 ### CPU and Memory
