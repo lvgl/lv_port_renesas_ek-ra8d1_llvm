@@ -3,7 +3,7 @@
 
 #define configUSE_TRACE_FACILITY 1
 
-#include "lvgl/src/lv_conf_internal.h"
+#include "src/lv_conf_internal.h"
 #if LV_USE_OS == LV_OS_FREERTOS
     void lv_freertos_task_switch_in(const char * name);
     void lv_freertos_task_switch_out(void);

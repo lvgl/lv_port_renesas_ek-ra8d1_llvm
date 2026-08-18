@@ -1,6 +1,10 @@
 #include <LVGL_thread.h>
 #include "board_init.h"
-#include "lvgl/demos/lv_demos.h"
+#include "demos/lv_demos.h"
+#if LV_USE_OS == LV_OS_FREERTOS
+    /* lv_os_get_idle_percent() is not public API in LVGL 9.5 */
+    #include "src/osal/lv_os_private.h"
+#endif
 
 static uint32_t tick_us100;
 
